@@ -1,0 +1,47 @@
+---
+title: "Documento de R en Markdown"
+author: "VP"
+date: "23 de septiembre de 2016"
+output: html_document
+---
+**negrita**
+__negrita__  
+*italica*
+_italica_
+~~tachado~~
+
+para que no tome como la misma linea poner dos espacios luego del texto (salto de linea)
+para hacer parrafo nuevo, una linea en blanco
+```{r}
+
+```
+
+* item a dejar una linea para que interprete vi?eta
+* item b
+
+1. negrita con asteriscos dobles
+1. italica con guiones bajos
+1. c?digo con comillas hacia atr?s (backticks)
+
+
+# Título
+## Sección principal
+### Sub-sección
+#### Sub-sub sección
+```{r primer_archivo_M, echo=FALSE, fig.height= 11, fig.width = 8 }
+library(ggplot2)
+gapminder <- read.csv("data/gapminder-FiveYearData.csv")
+ggplot(data = gapminder, 
+       aes(x = gdpPercap, y = lifeExp, 
+           by = country, color = continent)) +
+  geom_point()
+  
+```
+
+```{r segundo}
+x <- 2 * pi
+
+```
+# algun texto `r round(x, 2)`
+
+# el calculo de una funcion x es `r (4 + 4)`
